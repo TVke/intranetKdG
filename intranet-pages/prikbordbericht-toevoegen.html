@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KdG Intranet</title>
+    
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+</head>
+<body>
+    
+    <div>
+        <header>
+            <div class="white-banner">
+                <div class="wrapper cfx">
+                    <nav class="site-switch">
+                        <ul>
+                            <li class="active"><a href="home.html">Studentenportaal</a></li>
+                            <li><a href="#">Medewerkersportaal</a></li>
+                        </ul>
+                    </nav>
+                    <nav class="nav-utility">
+                        <ul>
+                            <li><a href="prikbordbericht-overzicht.html">Prikbord</a></li>
+                            <li><a href="#">Ivan Waumans</a></li>
+                        </ul>
+                        
+                    </nav>
+                </div>
+            </div>
+            <div class="black-banner">
+                <div class="wrapper cfx">
+                    <div id="logo">
+                        <img src="svg/KdG_H_Closed_White.svg" alt="Logo van Karel de Grote Hogeschool">
+                    </div>
+                    <nav class="nav-main-responsive">
+                        <ul>
+                            <li class="search"><a href="#">Zoeken</a></li>
+                            <li class="menu">
+                                <a href="#">
+                                    <div class="icon-menu">
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                        <span class="icon-bar"></span>
+                                    </div>
+                                    Menu
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <nav class="nav-main">
+                        <ul>
+                            <li class="home active"><a href="home.html">Home</a></li>
+                            <li class="announcements"><a href="#">Mededelingen</a></li>
+                            <li class="schedule"><a href="#">Roosters</a></li>
+                            <li class="email"><a href="#">KdG Mail</a></li>
+                            <li class="blackboard"><a href="#">Blackboard</a></li>
+                            <li class="eservice"><a href="#">E-studentservice</a></li>
+                            <li class="search"><a href="#">Zoeken</a></li>
+                        </ul>
+                    </nav>
+
+                </div>
+            </div>
+            <div class="white-banner">
+                <div class="crumbtrail">
+                    <div class="wrapper">
+                        <ol>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Prikbord</a></li>
+                            <li>Prikbordbericht toevoegen</li>
+                        </ol>
+                        
+                        <section class="page-actions">
+                            <a href="#" class="edit"></a>
+                            <a href="#" class="forward"></a>
+                            <a href="#" class="favorite"></a>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="wrapper">
+                <div class="form">
+                    <h1>Prikbordbericht toevoegen</h1>
+                    
+                    <p>Je kan enkel prikbordberichten aanmaken of reageren op prikbordberichten wanneer je je profiel niet onzichtbaar gemaakt hebt.</p>
+                    
+                    <form action="prikbordbericht-overzicht.html" method="get">
+                        <div>
+                            <label for="fld-title">Titel *</label>
+                            <input type="text" name="title" id="fld-title">
+                        </div>
+
+                        <div>
+                            <label for="fld-targetgroup">Doelgroep *</label>
+                            <input type="text" name="targetgroup" id="fld-targetgroup">
+                        </div>
+
+                        <div>
+                            <label for="fld-category">Categorie *</label>
+                            <input type="text" name="category" id="fld-category">
+                        </div>
+
+                        <div>
+                            <label for="fld-enddate">Tonen tot</label>
+                            <input type="text" name="enddate" id="fld-enddate">
+                        </div>
+
+                        <div>
+                            <label for="fld-msg">Bericht *</label>
+                            <textarea name="message" id="fld-msg" rows="5"></textarea>
+                        </div>
+                        
+                        <div>
+                            <button type="submit">Prikbordbericht plaatsen</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="black-banner">
+                <div class="wrapper">
+                    <div class="nav-footer">
+                        <div class="nav-group third">
+                            <h2>Handig</h2>
+                            <ul>
+                                <li><a href="#">Woordenlijst</a></li>
+                                <li><a href="#">Onthaal nieuwe studenten</a></li>
+                                <li><a href="#">Contacteer de redactie</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="nav-group third">
+                            <h2>Karel de Grote<br>Hogeschool</h2>
+                            <ul>
+                                <li><a href="http://www.kdg.be">www.kdg.be</a></li>
+                            </ul>
+                        </div>
+                        
+                        <div class="nav-group third">
+                            <h2>Mijn KdG account</h2>
+                            <ul>
+                                <li><a href="#">Mijn Profiel beheren</a></li>
+                                <li><a href="#">Mijn Favorieten</a></li>
+                                <li><a href="#">Mijn Prikbordberichten</a></li>
+                                <li><a href="#">Mijn Mededelingen</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+</body>
+</html>
