@@ -1,0 +1,17 @@
+Inspiratie voor de cursus: Designing Interface Animation door Val Head
+http://rosenfeldmedia.com/books/designing-interface-animation/
+
+Zelf iconFonts maken
+https://icomoon.io/app/#/select
+
+Underscore
+http://underscorejs.org/
+
+How to keep up to date on Front-End Technologies
+http://uptodate.frontendrescue.org/
+
+Bennett Feely
+http://bennettfeely.com/
+
+Animatie style guide van IBM
+http://www.ibm.com/design/language/framework/animation/elements/
