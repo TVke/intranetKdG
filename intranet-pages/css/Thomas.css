@@ -46,7 +46,9 @@ h3:hover{
 	bottom: 0;
 	right: 0;
 	left: 0;
-	display: block;
+	text-align: center;
+	padding: 50px 0;
+	z-index: 10;
 }
 
 #controller>div>div{
@@ -126,26 +128,32 @@ div[class^="verdieping-"]::after{
 #controller .verdieping-1{
 	bottom: 10px;
 	transform: translateZ(20px);
+	z-index: 0;
 }
 #controller .verdieping-2{
 	bottom: 20px;
 	transform: translateZ(40px);
+	z-index: 1;
 }
 #controller .verdieping-3{
 	bottom: 30px;
 	transform: translateZ(60px);
+	z-index: 2;
 }
 #controller .verdieping-4{
 	bottom: 40px;
 	transform: translateZ(80px);
+	z-index: 3;
 }
 #controller .verdieping-5{
 	bottom: 50px;
 	transform: translateZ(100px);
+	z-index: 4;
 }
 #controller .verdieping-6{
 	bottom: 60px;
 	transform: translateZ(120px);
+	z-index: 5;
 }
 
 /* aanduiding */
