@@ -1,0 +1,166 @@
+*,html{margin: 0;padding: 0;}
+h3{
+	border-top:2px solid black;
+	width: 100%;
+	text-align: center;
+	color: #7ab82c;
+	clear: both;
+	display: block;
+	background: white;
+}
+h3:hover{
+	text-decoration: underline;
+	color: #a9cb59;
+	cursor: pointer;
+}
+#container{
+	perspective: 1500px;
+	overflow: hidden;
+}
+#controller{
+	transform-style: preserve-3d;
+	transition: all 0.5s ease;
+}
+#bovenkant::before{
+	content: "";
+	background: #7ab82c;
+	width: 100%;
+	height: 350px;
+	position: absolute;
+	transform-origin: bottom center;
+	transform: translateY(-100%)rotateX(-90deg);
+}
+#controller div{
+	transform-style: preserve-3d;
+}
+#controller>div{
+	width: 100%;
+	background: Whitesmoke;
+}
+
+#controller>div>div::before{
+	content: attr(id);
+	position: absolute;
+	transform: translateZ(61px);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: block;
+}
+
+#controller>div>div{
+	float: left;
+	margin: 4%;
+	margin-right: 0;
+	background: white;
+	width: 30%;
+	height: 200px;
+	border: 2px solid black;
+	position: relative;
+}
+#bovenkant>div:first-child,#bovenkant>div:first-child div[class^="verdieping-"]{
+	border-right: 1px gray dashed;
+}
+#bovenkant>div:nth-child(2),#bovenkant>div:nth-child(2) div[class^="verdieping-"]{
+	margin-left: 0;
+	border-left: 1px gray dashed;
+}
+div[class^="verdieping-"]{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border: 1px solid black;
+	background: white;
+}
+#controller #onderkant>div{
+	margin: 4%;
+	float: right;
+}
+#onderkant{
+	border-top: 2px solid black;
+	background: whiteSmoke;
+}
+#onderkant::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+#kaart{
+	height: 0px;
+}
+
+#controller.toon{
+	transform: translate(70px, -70px)scale(1.2)rotateX(70deg);
+}
+#controller.toon .lokaal::before,#controller.toononder .lokaal::before{
+	transform: rotateX(-90deg);
+	border-top: 18px solid #7ab82c;
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
+}
+#controller.toononder{
+	transform: translate(0px, -0px)scale(0.9)rotateX(70deg);
+}
+
+/* verdiepingen */
+
+div[class^="verdieping-"]::after{
+	content: "";
+	display: block;
+	position: absolute;
+	height: 5px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: black;
+	transform-origin: top center;
+	transform: translateY(100%)rotateX(-90deg);
+}
+
+#blok-C div{
+	right: -4px;
+}
+#controller .verdieping-1{
+	bottom: 10px;
+	transform: translateZ(20px);
+}
+#controller .verdieping-2{
+	bottom: 20px;
+	transform: translateZ(40px);
+}
+#controller .verdieping-3{
+	bottom: 30px;
+	transform: translateZ(60px);
+}
+#controller .verdieping-4{
+	bottom: 40px;
+	transform: translateZ(80px);
+}
+#controller .verdieping-5{
+	bottom: 50px;
+	transform: translateZ(100px);
+}
+#controller .verdieping-6{
+	bottom: 60px;
+	transform: translateZ(120px);
+}
+
+/* aanduiding */
+
+.lokaal::before{
+	content: "";
+	position: absolute;
+	width: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	border-top:10px solid #7ab82c;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	transform-origin: bottom center;
+	transition: all 0.5s ease;
+}

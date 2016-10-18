@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>KdG Intranet</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="css/Thomas.css">
+</head>
+
+<body>
+    <div>
+        <header>
+            <div class="white-banner">
+                <div class="wrapper cfx">
+                    <nav class="site-switch">
+                        <ul>
+                            <li class="active"><a href="home.html">Studentenportaal</a></li>
+
+                            <li><a href="#">Medewerkersportaal</a></li>
+                        </ul>
+                    </nav>
+
+                    <nav class="nav-utility">
+                        <ul>
+                            <li><a href="prikbordbericht-overzicht.html">Prikbord</a></li>
+
+                            <li><a href="#">Ivan Waumans</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="black-banner">
+                <div class="wrapper cfx">
+                    <div id="logo"><img src="svg/KdG_H_Closed_White.svg" alt="Logo van Karel de Grote Hogeschool"></div>
+
+                    <nav class="nav-main-responsive">
+                        <ul>
+                            <li class="search"><a href="#">Zoeken</a></li>
+
+                            <li class="menu">
+                                <a href="#"></a>
+
+                                <div class="icon-menu"></div>Menu
+                            </li>
+                        </ul>
+                    </nav>
+
+                    <nav class="nav-main">
+                        <ul>
+                            <li class="home active"><a href="home.html">Home</a></li>
+
+                            <li class="announcements"><a href="#">Mededelingen</a></li>
+
+                            <li class="schedule"><a href="#">Roosters</a></li>
+
+                            <li class="email"><a href="#">KdG Mail</a></li>
+
+                            <li class="blackboard"><a href="#">Blackboard</a></li>
+
+                            <li class="eservice"><a href="#">E-studentservice</a></li>
+
+                            <li class="search"><a href="#">Zoeken</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <div id="container">
+            <div id="controller">
+                <div id="bovenkant">
+                    <div id="blok-C">
+                        <div class="verdieping-3"></div>
+
+                        <div class="verdieping-2"></div>
+
+                        <div class="verdieping-1 lokaal"></div>
+                    </div>
+
+                    <div id="blok-B">
+                        <div class="verdieping-3"></div>
+
+                        <div class="verdieping-2"></div>
+
+                        <div class="verdieping-1"></div>
+                    </div>
+                    <h3>Hoboken</h3>
+                </div>
+
+                <div id="kaart"></div>
+
+                <div id="onderkant">
+                    <div id="blok-A">
+                        <div class="verdieping-3"></div>
+
+                        <div class="verdieping-2"></div>
+
+                        <div class="verdieping-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script src="js/main.js" type="text/javascript"></script>
+<script type="text/javascript">
+	document.getElementById("bovenkant").getElementsByTagName("h3")[0].addEventListener("click",function(){
+		document.getElementById("controller").classList.toggle("openMap");
+	});
+	var bovenBlocks = document.querySelectorAll("#bovenkant div[id^='blok-']");
+	
+	for(let i=0,ilen=bovenBlocks.length;i<ilen;++i){
+		bovenBlocks[i].addEventListener("mouseover",function(){
+		document.getElementById("controller").classList.add("toon");
+	});bovenBlocks[i].addEventListener("mouseout",function(){
+		document.getElementById("controller").classList.toggle("toon");
+	});
+	}
+	
+	var onderBlocks = document.querySelectorAll("#onderkant div[id^='blok-']");
+	
+	for(let i=0,ilen=onderBlocks.length;i<ilen;++i){
+		onderBlocks[i].addEventListener("mouseover",function(){
+		document.getElementById("controller").classList.add("toononder");
+	});onderBlocks[i].addEventListener("mouseout",function(){
+		document.getElementById("controller").classList.toggle("toononder");
+	});
+	}
+	
+</script>
+</body>
+</html>
