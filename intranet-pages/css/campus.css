@@ -1,4 +1,31 @@
 *,html{margin: 0;padding: 0;}
+
+header button{
+	position: absolute;
+	right: 0;
+	z-index: 100;
+	font-size: .8em;
+	margin:10px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 3px;
+}
+header button:hover{
+	background: -webkit-linear-gradient(rgb(192, 192, 192),gray);
+	background: linear-gradient(rgb(192, 192, 192),gray);
+}
+header button:active{
+	background: -webkit-linear-gradient(gray,rgb(192, 192, 192));
+	background: linear-gradient(gray,rgb(192, 192, 192));
+	color: black;
+}
+
+h3:hover{
+	text-decoration: underline;
+	color: #a9cb59;
+	cursor: pointer;
+}
+
 h3{
 	border-top:2px solid black;
 	width: 100%;
@@ -7,11 +34,6 @@ h3{
 	clear: both;
 	display: block;
 	background: white;
-}
-h3:hover{
-	text-decoration: underline;
-	color: #a9cb59;
-	cursor: pointer;
 }
 #container{
 	perspective: 1500px;
@@ -51,10 +73,13 @@ h3:hover{
 	z-index: 10;
 }
 
+#controller>#onderkant>div::before{
+	transform: translateZ(41px);
+}
+
 #controller>div>div{
 	float: left;
-	margin: 4%;
-	margin-right: 0;
+	margin: 4% 0 4% 4%;
 	background: white;
 	width: 30%;
 	height: 170px;
@@ -106,6 +131,9 @@ div[class^="verdieping-"]{
 
 /* verdiepingen */
 
+div[class^="verdieping-"]{
+	padding: 5px;
+}
 div[class^="verdieping-"]::after{
 	content: "";
 	display: block;
@@ -191,4 +219,42 @@ div[class^="verdieping-"]::after{
 	border-left: 10px solid transparent;
 	transform-origin: bottom center;
 	transition: all 0.5s ease;
+}
+
+/* hyperlinks */
+
+body #onderkant #hyperlinks{
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+#hyperlinks a{
+	cursor: pointer;
+}
+
+#hyperlinks p:nth-child(2){
+	font-size: 2em;
+	line-height: 100%;
+}
+
+#hyperlinks a:hover{
+	color: #000;
+	text-decoration: underline;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+body #controller *{
+	transition: all .5s ease;
+}
+
+body #controller .glow{
+	background: #a9cb59;
+	box-shadow: 0 0 10px #a9cb59;
+
 }
