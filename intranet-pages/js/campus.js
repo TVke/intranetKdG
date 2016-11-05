@@ -32,7 +32,7 @@ document.querySelector("header button").addEventListener("click",function () {
 
 // glow function
 
-var glow = function(element) {
+var glow = function(element,time=500) {
 	if(!element.classList.contains("glow")){
 		element.classList.add("glow");
 	}
@@ -40,7 +40,7 @@ var glow = function(element) {
 		if(element.classList.contains("glow")){
 			element.classList.remove("glow");
 		}
-	},500);
+	},time);
 };
 
 var hyperlinks=[];
@@ -61,24 +61,59 @@ hyperlinks[0][1].addEventListener("click",function () {
 hyperlinks[0][2].addEventListener("click",function () {
 	toon("toon");
 	setTimeout(function () {
-		document.querySelector("#blok-C .verdieping-3").classList.add("hidden");
+		document.querySelector("#blok-C .verdieping-4").classList.add("hidden");
+		document.querySelector("#blok-C").classList.add("hide");
 	},500);
 	setTimeout(function () {
-		document.querySelector("#blok-C .verdieping-2").classList.add("hidden");
+		document.querySelector("#blok-C .verdieping-3").classList.add("hidden");
 	},1000);
 	setTimeout(function () {
+		document.querySelector("#blok-C .verdieping-2").classList.add("hidden");
+	},1500);
+	setTimeout(function () {
 		glow(document.querySelector("#blok-C .verdieping-1"));
-	},2000);
+	},2500);
 	setTimeout(function () {
 		document.querySelector(".verdieping-2").classList.remove("hidden");
-	},3000);
-	setTimeout(function () {
-		document.querySelector(".verdieping-3").classList.remove("hidden");
 	},3500);
 	setTimeout(function () {
-		toon("toon");
+		document.querySelector(".verdieping-3").classList.remove("hidden");
 	},4000);
+	setTimeout(function () {
+		document.querySelector(".verdieping-4").classList.remove("hidden");
+		document.querySelector("#blok-C").classList.remove("hide");
+	},4500);
+	setTimeout(function () {
+		toon("toon");
+	},5000);
 });
 hyperlinks[0][3].addEventListener("click",function () {
-	glow();
+	//glow();
+	toon("zoom");
+	setTimeout(function () {
+		document.querySelector("#blok-C .verdieping-4").classList.add("hidden");
+		document.querySelector("#blok-C").classList.add("hide");
+	},500);
+	setTimeout(function () {
+		document.querySelector("#blok-C .verdieping-3").classList.add("hidden");
+	},1000);
+	setTimeout(function () {
+		document.querySelector("#blok-C .verdieping-2").classList.add("hidden");
+	},1500);
+	setTimeout(function () {
+		glow(document.querySelector("#blok-C .verdieping-1 .lokaal-06"),1000);
+	},2500);
+	setTimeout(function () {
+		document.querySelector(".verdieping-2").classList.remove("hidden");
+	},5500);
+	setTimeout(function () {
+		document.querySelector(".verdieping-3").classList.remove("hidden");
+	},6000);
+	setTimeout(function () {
+		document.querySelector(".verdieping-4").classList.remove("hidden");
+		document.querySelector("#blok-C").classList.remove("hide");
+	},6500);
+	setTimeout(function () {
+		toon("zoom");
+	},7000);
 });

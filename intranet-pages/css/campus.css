@@ -63,7 +63,7 @@ h3{
 #controller>div>div::before{
 	content: attr(id);
 	position: absolute;
-	transform: translateZ(61px);
+	transform: translateZ(81px);
 	top: 0;
 	bottom: 0;
 	right: 0;
@@ -74,7 +74,7 @@ h3{
 }
 
 #controller>#onderkant>div::before{
-	transform: translateZ(41px);
+	transform: translateZ(61px);
 }
 
 #controller>div>div{
@@ -206,7 +206,7 @@ div[class^="verdieping-"]::after{
 
 /* aanduiding */
 
-.lokaal::before{
+/*.lokaal::before{
 	content: "";
 	position: absolute;
 	width: 0;
@@ -219,7 +219,7 @@ div[class^="verdieping-"]::after{
 	border-left: 10px solid transparent;
 	transform-origin: bottom center;
 	transition: all 0.5s ease;
-}
+}*/
 
 /* hyperlinks */
 
@@ -256,5 +256,141 @@ body #controller *{
 body #controller .glow{
 	background: #a9cb59;
 	box-shadow: 0 0 10px #a9cb59;
+}
 
+.zoom{
+	transform: scale(1.5) translateX(200px) translateY(100px);
+}
+body #controller.zoom.toon{
+	transform: scale(1.5) translateX(200px) translateY(100px);
+}
+
+body #controller #blok-C.hide::before{
+	opacity:0;
+}
+
+span.trap{
+	display: block;
+	width: 20%;
+	height: 20px;
+	border: solid 1px black;
+	position: absolute;
+}
+
+span.trap:first-child{
+	left: 0;
+	bottom: 25px;
+}
+span.trap:last-child{
+	right: 0;
+	top: 0;
+}
+
+span.trap::before{
+	content: "";
+	display: block;
+	height: 20px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	width: 5%;
+	position: absolute;
+	left: 25%;
+	background: lightGray;
+}
+
+span.trap::after{
+	content: "";
+	display: block;
+	height: 20px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	width: 5%;
+	position: absolute;
+	right: 25%;
+	background: lightGray;
+}
+
+span[class^="lokaal"]{
+	border: 1px solid black;
+	width: 30%;
+	height: 15px;
+	display: block;
+	position: absolute;
+	font-size: 0.5em;
+	line-height: 15px;
+	text-align: center;
+}
+span.lokaal-01{
+	right: 32%;
+	bottom: 0;
+	width: 45%;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-02{
+	bottom: 20px;
+	right: 0;
+	height: 30px;
+	text-align: center;
+	line-height: 25px;
+}
+span.lokaal-03{
+	right: 0;
+	bottom: 51px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-04{
+	right: 0;
+	bottom: 72px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-05{
+	right: 0;
+	bottom: 93px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-06{
+	right: 0;
+	top: 22px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-07{
+	right: 47%;
+	top: 0;
+	height: 21px;
+	line-height: 21px;
+}
+span.lokaal-08{
+	right: 47%;
+	top: 22px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-09{
+	right: 47%;
+	bottom: 98px;
+}
+span.lokaal-10{
+	right: 47%;
+	bottom: 82px;
+}
+span.lokaal-11{
+	right: 47%;
+	bottom: 66px;
+}
+span.lokaal-12{
+	right: 47%;
+	bottom: 50px;
+}
+.verdieping-2 .lokaal-05{
+	height: 31px;
+	line-height: 31px;
+}
+.verdieping-2 .lokaal-08{
+	height: 26px;
+	line-height: 26px;
 }
