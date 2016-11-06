@@ -1,0 +1,91 @@
+@media screen and (max-width: 1330px)
+{
+    #logo, .nav-main { float: none; }
+    
+    .nav-main-responsive {
+        display: block;
+    }
+    
+    .nav-main {
+        display: none;
+        margin: 0 -3rem;
+    }
+    
+    .nav-main li { 
+        float: none; 
+    }
+    
+    .nav-main li.active a {
+        background-color: #a9cb59;
+        color: #fff;
+    }
+    
+    .nav-main li a:hover {
+        background-color: #a9cb59;
+    }
+    
+    .nav-main .search { display: none; }
+    
+    .nav-main .home a,
+    .nav-main .announcements a,
+    .nav-main .schedule a,
+    .nav-main .email a,
+    .nav-main .blackboard a,
+    .nav-main .eservice a
+    {
+        background-color: #7ab82c;
+        color: #fff;
+        position: relative;
+        line-height: 40px;
+        margin: 0;
+        padding: 0 0 0 60px;
+        border: none;
+    }
+    
+    .nav-main .home a::before,
+    .nav-main .announcements a::before,
+    .nav-main .schedule a::before,
+    .nav-main .email a::before,
+    .nav-main .blackboard a::before,
+    .nav-main .eservice a::before,
+    .nav-main .search a::before
+    {
+        position: absolute;
+        left:10px;
+        top:5px;
+        padding: 0;
+    }
+    
+    .nav-main .active.home a::before,
+    .nav-main .active.announcements a::before,
+    .nav-main .active.schedule a::before,
+    .nav-main .active.email a::before,
+    .nav-main .active.blackboard a::before,
+    .nav-main .active.eservice a::before,
+    .nav-main .active.search a::before
+    {
+        color: #fff;
+    }
+        
+    .bulletin-board-items article { width: 45%; }
+    
+}
+
+@media screen and (max-width: 1100px)
+{
+    .main aside, .main main {
+        float: none;
+        width: 100%;
+    }
+    
+    .third {
+        float: none;
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 800px)
+{
+    .bulletin-board-items article { width: 100%; }
+}

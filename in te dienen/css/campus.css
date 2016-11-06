@@ -1,0 +1,396 @@
+*,html{margin: 0;padding: 0;}
+
+header button{
+	position: absolute;
+	right: 0;
+	z-index: 100;
+	font-size: .8em;
+	margin:10px;
+	padding: 5px;
+	border: 1px solid;
+	border-radius: 3px;
+}
+header button:hover{
+	background: -webkit-linear-gradient(rgb(192, 192, 192),gray);
+	background: linear-gradient(rgb(192, 192, 192),gray);
+}
+header button:active{
+	background: -webkit-linear-gradient(gray,rgb(192, 192, 192));
+	background: linear-gradient(gray,rgb(192, 192, 192));
+	color: black;
+}
+
+h3:hover{
+	text-decoration: underline;
+	color: #a9cb59;
+	cursor: pointer;
+}
+
+h3{
+	border-top:2px solid black;
+	width: 100%;
+	text-align: center;
+	color: #7ab82c;
+	clear: both;
+	display: block;
+	background: white;
+}
+#container{
+	perspective: 1500px;
+	overflow: hidden;
+}
+#controller{
+	transform-style: preserve-3d;
+	transition: all 0.5s ease;
+}
+#bovenkant::before{
+	content: "";
+	background: #7ab82c;
+	width: 100%;
+	height: 350px;
+	position: absolute;
+	transform-origin: bottom center;
+	transform: translateY(-100%)rotateX(-90deg);
+}
+#controller div{
+	transform-style: preserve-3d;
+}
+#controller>div{
+	width: 100%;
+	background: Whitesmoke;
+}
+
+#controller>div>div::before{
+	content: attr(id);
+	position: absolute;
+	transform: translateZ(81px);
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	text-align: center;
+	padding: 50px 0;
+	z-index: 10;
+}
+
+#controller>#onderkant>div::before{
+	transform: translateZ(61px);
+}
+
+#controller>div>div{
+	float: left;
+	margin: 4% 0 4% 4%;
+	background: white;
+	width: 30%;
+	height: 170px;
+	border: 2px solid black;
+	position: relative;
+}
+#bovenkant>div:first-child,#bovenkant>div:first-child div[class^="verdieping-"]{
+	border-right: 1px gray dashed;
+}
+#bovenkant>div:nth-child(2),#bovenkant>div:nth-child(2) div[class^="verdieping-"]{
+	margin-left: 0;
+	border-left: 1px gray dashed;
+}
+div[class^="verdieping-"]{
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	border: 1px solid black;
+	background: white;
+}
+#controller #onderkant>div{
+	margin: 4%;
+	float: right;
+}
+#onderkant{
+	border-top: 2px solid black;
+	background: whiteSmoke;
+}
+#onderkant::after{
+	content: "";
+	clear: both;
+	display: block;
+}
+
+#controller.toon{
+	transform: translate(70px, -70px)scale(1.2)rotateX(70deg);
+}
+#controller.toon .lokaal::before,#controller.toononder .lokaal::before{
+	transform: rotateX(-90deg);
+	border-top: 18px solid #7ab82c;
+	border-left: 18px solid transparent;
+	border-right: 18px solid transparent;
+}
+#controller.toononder{
+	transform: translate(0px, -0px)scale(0.9)rotateX(70deg);
+}
+
+/* verdiepingen */
+
+div[class^="verdieping-"]{
+	padding: 5px;
+}
+div[class^="verdieping-"]::after{
+	content: "";
+	display: block;
+	position: absolute;
+	height: 5px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: black;
+	transform-origin: top center;
+	transform: translateY(100%)rotateX(-90deg);
+}
+
+#blok-C div{
+	right: -4px;
+}
+#controller .verdieping-1{
+	bottom: 10px;
+	transform: translateZ(20px);
+	z-index: 0;
+}
+#controller .verdieping-2{
+	bottom: 20px;
+	transform: translateZ(40px);
+	z-index: 1;
+}
+#controller .verdieping-3{
+	bottom: 30px;
+	transform: translateZ(60px);
+	z-index: 2;
+}
+#controller .verdieping-4{
+	bottom: 40px;
+	transform: translateZ(80px);
+	z-index: 3;
+}
+#controller .verdieping-5{
+	bottom: 50px;
+	transform: translateZ(100px);
+	z-index: 4;
+}
+#controller .verdieping-6{
+	bottom: 60px;
+	transform: translateZ(120px);
+	z-index: 5;
+}
+
+/* kaart */
+
+#kaart{
+	transition: all 0.5s ease;
+	height: 0;
+}
+
+#kaart iframe{
+	border: none;
+	width: 100%;
+	height: 150px;
+	opacity: 0;
+}
+
+.openMap #kaart{
+	height: 150px;
+}
+
+.openMap #kaart iframe{
+	height: 150px;
+	opacity: 1;
+}
+
+/* aanduiding */
+
+/*.lokaal::before{
+	content: "";
+	position: absolute;
+	width: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	margin: 0 auto;
+	border-top:10px solid #7ab82c;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	transform-origin: bottom center;
+	transition: all 0.5s ease;
+}*/
+
+/* hyperlinks */
+
+body #onderkant #hyperlinks{
+	position: absolute;
+	bottom: 50px;
+	left: 0;
+	right: 0;
+	text-align: center;
+}
+
+#hyperlinks a{
+	cursor: pointer;
+}
+
+#hyperlinks p:nth-child(2){
+	font-size: 2em;
+	line-height: 100%;
+}
+
+#hyperlinks a:hover{
+	color: #000;
+	text-decoration: underline;
+}
+
+.hidden{
+	opacity: 0;
+}
+
+body #controller *{
+	transition: all .5s ease;
+}
+
+body #controller .glow{
+	background: #a9cb59;
+	box-shadow: 0 0 10px #a9cb59;
+}
+
+.zoom{
+	transform: scale(1.5) translateX(200px) translateY(100px);
+}
+body #controller.zoom.toon{
+	transform: scale(1.5) translateX(200px) translateY(100px);
+}
+
+body #controller #blok-C.hide::before{
+	opacity:0;
+}
+
+span.trap{
+	display: block;
+	width: 20%;
+	height: 20px;
+	border: solid 1px black;
+	position: absolute;
+}
+
+span.trap:first-child{
+	left: 0;
+	bottom: 25px;
+}
+span.trap:last-child{
+	right: 0;
+	top: 0;
+}
+
+span.trap::before{
+	content: "";
+	display: block;
+	height: 20px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	width: 5%;
+	position: absolute;
+	left: 25%;
+	background: lightGray;
+}
+
+span.trap::after{
+	content: "";
+	display: block;
+	height: 20px;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	width: 5%;
+	position: absolute;
+	right: 25%;
+	background: lightGray;
+}
+
+span[class^="lokaal"]{
+	border: 1px solid black;
+	width: 30%;
+	height: 15px;
+	display: block;
+	position: absolute;
+	font-size: 0.5em;
+	line-height: 15px;
+	text-align: center;
+}
+span.lokaal-01{
+	right: 32%;
+	bottom: 0;
+	width: 45%;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-02{
+	bottom: 20px;
+	right: 0;
+	height: 30px;
+	text-align: center;
+	line-height: 25px;
+}
+span.lokaal-03{
+	right: 0;
+	bottom: 51px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-04{
+	right: 0;
+	bottom: 72px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-05{
+	right: 0;
+	bottom: 93px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-06{
+	right: 0;
+	top: 22px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-07{
+	right: 47%;
+	top: 0;
+	height: 21px;
+	line-height: 21px;
+}
+span.lokaal-08{
+	right: 47%;
+	top: 22px;
+	height: 20px;
+	line-height: 20px;
+}
+span.lokaal-09{
+	right: 47%;
+	bottom: 98px;
+}
+span.lokaal-10{
+	right: 47%;
+	bottom: 82px;
+}
+span.lokaal-11{
+	right: 47%;
+	bottom: 66px;
+}
+span.lokaal-12{
+	right: 47%;
+	bottom: 50px;
+}
+.verdieping-2 .lokaal-05{
+	height: 31px;
+	line-height: 31px;
+}
+.verdieping-2 .lokaal-08{
+	height: 26px;
+	line-height: 26px;
+}
