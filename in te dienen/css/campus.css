@@ -43,7 +43,7 @@ h3{
 	transform-style: preserve-3d;
 	transition: all 0.5s ease;
 }
-#bovenkant::before{
+.bovenkant::before{
 	content: "";
 	background: #7ab82c;
 	width: 100%;
@@ -55,13 +55,13 @@ h3{
 #controller div{
 	transform-style: preserve-3d;
 }
-#controller>div{
+#controller>div>div{
 	width: 100%;
 	background: Whitesmoke;
 }
 
-#controller>div>div::before{
-	content: attr(id);
+#controller>div>div>div::before{
+	content: attr(title);
 	position: absolute;
 	transform: translateZ(81px);
 	top: 0;
@@ -73,11 +73,11 @@ h3{
 	z-index: 10;
 }
 
-#controller>#onderkant>div::before{
+#controller>div>.onderkant>div::before{
 	transform: translateZ(61px);
 }
 
-#controller>div>div{
+#controller>div>div>div{
 	float: left;
 	margin: 4% 0 4% 4%;
 	background: white;
@@ -86,10 +86,10 @@ h3{
 	border: 2px solid black;
 	position: relative;
 }
-#bovenkant>div:first-child,#bovenkant>div:first-child div[class^="verdieping-"]{
+body #controller .bovenkant>div:first-child,.bovenkant>div:first-child div[class^="verdieping-"]{
 	border-right: 1px gray dashed;
 }
-#bovenkant>div:nth-child(2),#bovenkant>div:nth-child(2) div[class^="verdieping-"]{
+body #controller .bovenkant>div:nth-child(2),.bovenkant>div:nth-child(2) div[class^="verdieping-"]{
 	margin-left: 0;
 	border-left: 1px gray dashed;
 }
@@ -102,15 +102,15 @@ div[class^="verdieping-"]{
 	border: 1px solid black;
 	background: white;
 }
-#controller #onderkant>div{
+#controller .onderkant>div{
 	margin: 4%;
 	float: right;
 }
-#onderkant{
+.onderkant{
 	border-top: 2px solid black;
 	background: whiteSmoke;
 }
-#onderkant::after{
+.onderkant::after{
 	content: "";
 	clear: both;
 	display: block;
@@ -147,7 +147,7 @@ div[class^="verdieping-"]::after{
 	transform: translateY(100%)rotateX(-90deg);
 }
 
-#blok-C div{
+.blok-C div{
 	right: -4px;
 }
 #controller .verdieping-1{
@@ -183,47 +183,30 @@ div[class^="verdieping-"]::after{
 
 /* kaart */
 
-#kaart{
+.kaart{
 	transition: all 0.5s ease;
 	height: 0;
 }
 
-#kaart iframe{
+.kaart iframe{
 	border: none;
 	width: 100%;
 	height: 150px;
 	opacity: 0;
 }
 
-.openMap #kaart{
+.openMap .kaart{
 	height: 150px;
 }
 
-.openMap #kaart iframe{
+.openMap .kaart iframe{
 	height: 150px;
 	opacity: 1;
 }
 
-/* aanduiding */
-
-/*.lokaal::before{
-	content: "";
-	position: absolute;
-	width: 0;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	margin: 0 auto;
-	border-top:10px solid #7ab82c;
-	border-right: 10px solid transparent;
-	border-left: 10px solid transparent;
-	transform-origin: bottom center;
-	transition: all 0.5s ease;
-}*/
-
 /* hyperlinks */
 
-body #onderkant #hyperlinks{
+body .onderkant .hyperlinks{
 	position: absolute;
 	bottom: 50px;
 	left: 0;
@@ -231,16 +214,16 @@ body #onderkant #hyperlinks{
 	text-align: center;
 }
 
-#hyperlinks a{
+.hyperlinks a{
 	cursor: pointer;
 }
 
-#hyperlinks p:nth-child(2){
+.hyperlinks p:nth-child(2){
 	font-size: 2em;
 	line-height: 100%;
 }
 
-#hyperlinks a:hover{
+.hyperlinks a:hover{
 	color: #000;
 	text-decoration: underline;
 }
@@ -265,7 +248,7 @@ body #controller.zoom.toon{
 	transform: scale(1.5) translateX(200px) translateY(100px);
 }
 
-body #controller #blok-C.hide::before{
+body #controller .blok-C.hide::before{
 	opacity:0;
 }
 
@@ -393,4 +376,45 @@ span.lokaal-12{
 .verdieping-2 .lokaal-08{
 	height: 26px;
 	line-height: 26px;
+}
+
+#antwerpen{
+	position: absolute;
+	top:0;
+	bottom: 0;
+	left:0;
+	right:0;
+	transform-origin: right center;
+	transform: translate(-200%);
+}
+
+#antwerpen .onderkant{
+	height: calc(235px + 8%);
+}
+#controller.links{
+	transform: translate(200%);
+}
+#controller.toon.links{
+	transform: translate(70px, -70px)scale(1.2)rotateX(70deg) translate(200%);
+}
+#controller.links.zoom,#controller.links.zoom.toon{
+	transform: scale(1.5) translateX(200px) translateY(100px) translate(200%);
+}
+#antwerpen .blok-C::before,#antwerpen .blok-B::before{
+	transform: translateZ(61px);
+}
+body #controller .blok-B.hide::before,#antwerpen .hidden{
+	opacity:0;
+}
+#antwerpen::after{
+	content: "";
+	display: block;
+	position: absolute;
+	width:100%;
+	height: 43px;
+	top: 285px;
+	transform: translate(100%);
+	background: white;
+	border-top:2px solid black;
+	border-bottom:2px solid black;
 }
