@@ -406,13 +406,16 @@ span.lokaal-12{
 body #controller .blok-B.hide::before,#antwerpen .hidden{
 	opacity:0;
 }
-#antwerpen::after{
+#antwerpen .bovenkant::before{
+	background: gray;
+}
+#antwerpen .bovenkant::after{
 	content: "";
 	display: block;
 	position: absolute;
 	width:100%;
 	height: 43px;
-	top: 285px;
+	bottom: -2px;
 	transform: translate(100%);
 	background: white;
 	border-top:2px solid black;
