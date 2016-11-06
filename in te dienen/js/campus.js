@@ -1,6 +1,9 @@
 // kaart
 document.querySelector(".bovenkant h3").addEventListener("click",function() {
 	document.getElementById("controller").classList.toggle("openMap");
+});// antwerpen
+document.querySelectorAll(".bovenkant h3")[1].addEventListener("click",function() {
+	document.getElementById("controller").classList.toggle("openMap");
 });
 
 // bovenblok
